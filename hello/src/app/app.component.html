@@ -19,7 +19,6 @@
     .serif {
       font-family: "Times New Roman", Times, serif;
     }
-
   </style>
 </head>
 
@@ -28,13 +27,15 @@
   <nav class="navbar sticky-top navbar-light bg-light">
     <div class="container-fluid">
       <div class="navbar-header">
-        <h2 style="color: black;" class="serif">Online Diet<br>Management System</h2>
+        <h2 style="color: black;" class="serif">{{title}}</h2>
+        <h2 style="color: black;" class="serif">{{title1}}</h2>
+
       </div>
       <div class="">
         <table>
           <tr>
             <td>
-              <button type="button" class="btn btn-outline-secondary rounded-pill ">Sing In</button>
+              <button type="button" class="btn btn-outline-secondary rounded-pill "style="height:40px;width:80px">Sign In</button>
             </td>&nbsp;
           </tr>
         </table>
@@ -103,26 +104,29 @@
             </div>
           </div>
         </div>
+
         <!-- Sign Up -->
         <div class="col  border bg-light shadow p-3 mb-5 bg-white rounded">
-          <form>
+          <form #userForm="ngForm" autocomplete="off
+          ">
             <div class="row">
               <h2 class="text-center">New Member Registration</h2>
             </div>
+            <!-- First Name and Last Name -->
             <div class="row">
               <div class="col">
                 <label for="firstname">First Name</label>
-                <input type="text" class="form-control" placeholder="First name*">
+                <input type="text" class="form-control " placeholder="First name*" name="firstname" required>
               </div>
               <div class="col">
                 <label for="lastname">Last Name</label>
                 <input type="text" class="form-control" placeholder="Last name*">
               </div>
             </div>
+            <!-- Age and Gender -->
             <div class="row">
               <div class="col">
                 <label for="age">Age</label>
-
                 <input type="text" class="form-control" placeholder="Age*">
               </div>
               <div class="col">
@@ -135,25 +139,30 @@
                 </select>
               </div>
             </div>
+            <!-- Moile Number -->
             <div class="form-group">
-              <label for="exampleInputPassword1">Mobile Number</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="e.g 999-999-9999">
+              <label for="mobilenum">Mobile Number</label>
+              <input type="text" class="form-control" placeholder="e.g 999-999-9999" name="phone"  pattern="^[7-9]{1}[09]{9}$" required>
+              
             </div>
+            <!-- Email -->
             <div class="form-group ">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              <label for="Email">Email address</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                 placeholder="name@example.com">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
+           <!--Address  -->
             <div class="form-group ">
-              <label for="exampleInputEmail1">Address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              <label for="address">Address</label>
+              <input type="email" class="form-control" id="address" aria-describedby="emailHelp"
                 placeholder="Address*">
             </div>
+            <!-- City -->
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <select id="inputCity" class="form-control">
+                <label for="City">City</label>
+                <select id="City" class="form-control">
                   <option selected>Choose...</option>
                   <option>Lucknow</option>
                   <option>Mumbai</option>
@@ -162,79 +171,99 @@
                   <option>Other</option>
                 </select>
               </div>
+              <!-- State -->
               <div class="form-group col-md-6">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
+                <label for="State">State</label>
+                <select id="State" class="form-control">
                   <option selected>Choose...</option>
-                  <option>...</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Other</option>
+
                 </select>
               </div>
             </div>
+            <!-- Country -->
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">Country</label>
-                <select id="inputCountry" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
+                <label for="Country">Country</label>
+                <input type="text" class="form-control" id="country" aria-describedby="countryHelp"
+                placeholder="Country*">
               </div>
+              <!-- Pincode -->
               <div class="form-group col-md-6">
-                <label for="inputState">Pincode</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
+                <label for="Pincode">Pincode</label>
+                <input type="text" class="form-control" id="pincode" aria-describedby="pincodeHelp"
+                placeholder="Country*">
               </div>
             </div>
+            <!-- Height(ft) -->
             <div class="form-row">
               <div class="form-group col-md-2">
-                <label for="inputCity">Height</label>
-                <select id="inputState" class="form-control">
+                <label for="height">Height</label>
+                <select id="height" class="form-control">
                   <option selected>ft</option>
                   <option>ft</option>
                   <option>01</option>
                   <option>02</option>
+                  <option>03</option>
+                  <option>04</option>
+                  <option>05</option>
+                  <option>06</option>
+                  <option>07</option>
                 </select>
               </div>
+              <!-- height(in) -->
               <div class="form-group col-md-2">
-                <label for="inputCity" style="margin-top: 18px;"></label>
-                <select id="inputState" class="form-control">
-                  <option selected>in</option>
-                  <option>in</option>
+                <label for="height" style="margin-top: 18px;"></label>
+                <select id="inputft" class="form-control">
+                    <option value="">in</option>
                   <option>01</option>
                   <option>02</option>
+                  <option>03</option>
+                  <option>04</option>
+                  <option>05</option>
+                  <option>06</option>
+                  <option>07</option>
+                  <option>08</option>
+                  <option>09</option>
+                  <option>10</option>
                 </select>
               </div>
+              <!-- Weight -->
               <div class="form-group col-md-3">
-                <label for="inputState">Weight</label>
-                <input type="weight" class="form-control" id="exampleInputWeight" placeholder="Weight*">
-
+                <label for="weight">Weight</label>
+                <input type="weight" class="form-control" id="Weight" placeholder="Weight*">
               </div>
+              <!-- BMI -->
               <div class="form-group col-md-5">
-                <label for="inputState">BMI</label>
-                <input type="bmi" class="form-control" id="exampleInputBmi" placeholder="Height*Weight">
+                <label for="bmi">BMI</label>
+                <input type="bmi" class="form-control" id="Bmi" placeholder="Height*Weight">
 
               </div>
+              <!-- Reason for joining this Program -->
               <div class="form-group ">
-                <label for="exampleFormControlTextarea1">Reason for joining this Program</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="Textarea">Reason for joining this Program</label>
+                <textarea class="form-control" id="Textarea" rows="3"></textarea>
               </div>
             </div>
+            <!-- Any Existing Medical Conditions -->
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">Any Existing Medical Conditions</label>
-                <input type="text" class="form-control" id="inputCity">
+                <label for="Medical">Any Existing Medical Conditions</label>
+                <input type="text" class="form-control" id="medicalCon">
               </div>
+              <!--Any Existing Dietary Restrictions  -->
               <div class="form-group col-md-6">
-                <label for="inputState">Any Existing Dietary Restrictions</label>
-                <input type="text" class="form-control" id="inputCity">
+                <label for="Restrictions">Any Existing Dietary Restrictions</label>
+                <input type="text" class="form-control" id="Restrictions">
 
               </div>
             </div>
+            <!-- Dietary Custom -->
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">Dietary Custom</label>
-                <select id="inputState" class="form-control">
+                <label for="Dietary">Dietary Custom</label>
+                <select id="Dietary" class="form-control">
                   <option selected>Veg</option>
                   <option>Veg</option>
                   <option>Non-Veg</option>
@@ -243,9 +272,10 @@
 
                 </select>
               </div>
+              <!-- Pregnant Status -->
               <div class="form-group col-md-6">
-                <label for="inputState">Pregnant Status</label>
-                <select id="inputState" class="form-control">
+                <label for="PregnantStatus">Pregnant Status</label>
+                <select id="PregnantStatus" class="form-control">
                   <option selected>For Females only</option>
                   <option>Yes</option>
                   <option>No</option>
@@ -253,14 +283,18 @@
                 </select>
               </div>
             </div>
+            <!-- Referral -->
             <div class="form-group">
-              <label for="exampleInputPassword1">Referral Code</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="Referral">Referral Code</label>
+              <input type="password" class="form-control" id="Referral">
             </div>
+            <!-- Check me out -->
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <input type="checkbox" class="form-check-input" id="Check">
+              <label class="form-check-label" for="Check">Check me out</label>
             </div>
+
+            <!-- Button(Submit) -->
             <button type="submit" class="btn btn-primary">Sign Up</button>
           </form>
         </div>
@@ -272,34 +306,44 @@
   <!-- Cards -->
   <div class="container-fluid">
     <div class="d-flex justify-content-around">
+      <!-- Card1 -->
+
       <div class="col-sm-4">
         <div class="card border bg-light shadow p-3 mb-4 bg-white rounded">
           <div class="card-body " style="height:350px;"><br>
             <h5 class="card-title text-center">EAT WHAT YOU LOVE
-            </h5><br><br>
+            </h5>
+            <img src="assets/images/card1.jpg" alt="" srcset="" style="padding-left: 50px;">
+
             <p class="card-text text-justify"><b>Customize your meal planner with your favorite foods.</b> Yes, you can
               eat delicious meals and still lose weight.
               Your personalized plan lets you easily swap in foods to suit your needs and tastes.</p>
           </div>
         </div>
       </div>
+      <!-- Card2 -->
+
       <div class="col-sm-4">
         <div class="card border bg-light shadow p-3 mb-4 bg-white rounded">
           <div class="card-body" style="height:350px;"><br>
             <h5 class="card-title text-center">MAKE HEALTHY EATING EASY
-            </h5><br><br>
+            </h5>
+            <img src="assets/images/card2.jpg" alt="" srcset="" style="padding-left: 50px;">
+
             <p class="card-text text-justify"><b> Take all the guesswork out of healthier eating.</b> Discover thousands
               of easy and delicious family-friendly ideas for breakfast,
               lunch and dinner — and even snacks and dessert!</p>
           </div>
         </div>
       </div>
+      <!-- Card3 -->
+
       <div class="col-sm-4">
         <div class="card border bg-light shadow p-3 mb-4 bg-white rounded">
           <div class="card-body" style="height:350px;"><br>
             <h5 class="card-title text-center">PERSONALIZE IT
             </h5>
-            <img src="assets/images/carddiet.jpg" alt="" srcset="" style="padding-left: 50px;">
+            <img src="assets/images/card3.jpg" alt="" srcset="" style="padding-left: 50px;">
             <p class="card-text text-justify"><b>from multiple meal plans.</b> Your customized daily plan will be
               tailored to match your
               calorie level and includes printable versions to take with you or hang on your fridge.</p>
